@@ -1,0 +1,19 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.search{
+    border:2px solid $color-DFE1E6;
+    display:flex;
+    align-items:center;
+    min-width:240px;
+    height:40px;
+    @extend .pl-5, .pr-5;
+    @include border-radius(3px);
+    &__right{
+        justify-content:space-between;
+        flex-direction:row-reverse;
+    }
+    &__icon{
+        background-image:url('../../../public/images/search.svg');
+    }
+}

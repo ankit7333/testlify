@@ -1,0 +1,10 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.input{
+    border:none;
+    &::placeholder{
+        color:$color-6B778C;
+        @extend .font14;
+    }
+}

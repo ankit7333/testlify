@@ -1,0 +1,47 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.modal{
+    &__body{
+        display:flex;
+        gap:20px 0;
+        flex-direction:column;
+    }
+}
+.description{
+    border:2px solid $color-DFE1E6;
+    @include border-radius(3px);
+    display:flex;
+    align-items:center;
+    height:40px;
+    @extend .pl-10, .pr-10;
+    justify-content:space-between;
+    &__icon{
+        background-image:url('../../../public/images/description.svg');
+    }
+    input{
+        border:0;
+    }
+}
+.datetime{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px 10px;
+    flex-direction:column;
+    @media screen and (min-width:768px){
+        gap:0 10px;
+        flex-direction:row;
+    }
+    > div{
+        flex:1 1 auto;
+        width:100%;
+        @extend .description;
+    }
+}
+.date{
+    background-image:url('../../../public/images/date.svg');
+}
+.time{
+    background-image:url('../../../public/images/time.svg');
+}

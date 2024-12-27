@@ -1,0 +1,33 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.icon{
+    width:32px;
+    height:23px;
+    background-image:url('../../../public/images/icon1.svg');
+}
+.overview{
+    width:20px;
+    height:20px;
+    background-image:url('../../../public/images/overview.svg');
+}
+.group{
+    background-image:url('../../../public/images/groups.svg');
+}
+.setting{
+    background-image:url('../../../public/images/setting.svg');
+}
+.sidebar{
+    background-color:$color-F4F5F7;
+    @extend .p-16;
+    flex-direction:column;
+    gap:20px 0;
+    border-right:2px solid $color-DFE1E6;
+    display:none;
+    @media screen and (min-width:992px){
+        height:calc(100svh - 70px);
+        display:flex;
+        @include position(absolute, $left:0);
+        min-width:70px;
+    }
+}

@@ -1,0 +1,114 @@
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin transition($transition...) {
+    -moz-transition:$transition;
+    -o-transition:$transition;
+    -webkit-transition:$transition;
+    transition:$transition;
+}
+@mixin border-radius($top-left:null, $top-right:null, $bottom-right:null, $bottom-left:null){
+    -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+       -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+        -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
+            border-radius: $top-left $top-right $bottom-right $bottom-left;  
+  }
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+    box-shadow: $x-axis $y-axis $blur $color;
+}
+@for $i from 0 through 30 {
+    //font-size classes
+    $fontSizes: (font#{$i}:($i + px));
+
+    @each $key, $value in $fontSizes {
+        .#{$key} {
+        font-size: $value;
+        }
+    }
+
+    //margin classes
+    $margin: (m-#{$i}:($i + px));
+
+    @each $key, $value in $margin {
+        .#{$key} {
+        margin: $value;
+        }
+    }
+
+    $marginTop: (mt-#{$i}:($i + px));
+
+    @each $key, $value in $marginTop {
+        .#{$key} {
+        margin-top: $value;
+        }
+    }
+
+    $marginBottom: (mb-#{$i}:($i + px));
+
+    @each $key, $value in $marginBottom {
+        .#{$key} {
+        margin-bottom: $value;
+        }
+    }
+
+    $marginLeft: (ml-#{$i}:($i + px));
+
+    @each $key, $value in $marginLeft {
+        .#{$key} {
+        margin-left: $value;
+        }
+    }
+
+    $marginRight: (mr-#{$i}:($i + px));
+
+    @each $key, $value in $marginRight {
+        .#{$key} {
+        margin-right: $value;
+        }
+    }
+
+    //padding classes
+    $padding: (p-#{$i}:($i + px));
+
+    @each $key, $value in $padding {
+        .#{$key} {
+        padding: $value;
+        }
+    }
+
+    $paddingTop: (pt-#{$i}:($i + px));
+
+    @each $key, $value in $paddingTop {
+        .#{$key} {
+        padding-top: $value;
+        }
+    }
+
+    $paddingBottom: (pb-#{$i}:($i + px));
+
+    @each $key, $value in $paddingBottom {
+        .#{$key} {
+        padding-bottom: $value;
+        }
+    }
+
+    $paddingLeft: (pl-#{$i}:($i + px));
+
+    @each $key, $value in $paddingLeft {
+        .#{$key} {
+        padding-left: $value;
+        }
+    }
+
+    $paddingRight: (pr-#{$i}:($i + px));
+
+    @each $key, $value in $paddingRight {
+        .#{$key} {
+        padding-right: $value;
+        }
+    }
+}

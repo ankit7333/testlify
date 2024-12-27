@@ -1,0 +1,33 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.button{
+    border:0;
+    background-color:transparent;
+    @include border-radius(3px);
+    font-weight:500;
+    @extend .font14;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:$color-ffffff;
+    cursor:pointer;
+    @include transition(all .5s linear);
+    opacity:1;
+    &:hover{
+        opacity:.8;
+    }
+    &__primary{
+        background-color:$color-0052CC;
+        min-width:77px;
+        @extend .pt-8, .pb-8;
+    }
+    &__secondary{
+        @extend .button__primary;
+        background-color:$color-091E420A;
+        color:$color-42526E;
+        &:hover{
+            opacity:1;
+        }
+    }
+}

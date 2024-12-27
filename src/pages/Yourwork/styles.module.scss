@@ -1,0 +1,42 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.home{
+    &__top{
+        display:flex;
+        align-items:center;
+        width:100%;
+        justify-content:space-between;
+        @extend .p-10;
+    }
+    &__right{
+        display:flex;
+        align-items:center;
+        gap:0 15px;
+    }
+    &__middle{
+        display:flex;
+        @extend .p-10;
+        gap:0 20px;
+        @media (max-width:575.98px){
+            flex-direction:column;
+            gap:20px;
+        }
+    }
+}
+.dot{
+    width:32px;
+    height:32px;
+    background-image:url('../../../public/images/dots.svg');
+    border:1px solid $color-EBECF0;
+    @include border-radius(3px);
+}
+.group{
+    gap:0 10px;
+    display:flex;
+    align-items:center;
+    label{
+        @extend .font12;
+        color:$color-6B778C;
+    }
+}

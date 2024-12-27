@@ -1,0 +1,11 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.select{
+    border:1px solid $color-EBECF0;
+    @include border-radius(3px);
+    @extend .pt-5, .pb-5, .pl-10, .pr-10;
+}
+.group{
+    width:150px;
+}

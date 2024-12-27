@@ -1,0 +1,49 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.hamburger{
+    background-image:url('../../../public/images/hamburger.svg');
+    width:34px;
+    height:34px;
+}
+.logo{
+    height:24px;
+    width:57px;
+    display:inline-block;
+}
+.notify{
+    width:30px;
+    height:30px;
+    background-image:url('../../../public/images/notify.svg');
+}
+.questionmarkfill{
+    background-image:url('../../../public/images/question-fill.svg');
+}
+.setting{
+    background-image:url('../../../public/images/setting.svg');
+}
+.header{
+    background-color:$color-ffffff;
+    border-bottom:2px solid $color-EBECF0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    @extend .p-15;
+    > div{
+        gap:0 10px;
+        display:flex;
+        align-items:center;
+        @media screen and (min-width:992px){
+            gap:0 20px;
+        }
+    }
+    &__right{
+        justify-content:space-around;
+    }
+    &__search{
+        display:none;
+        @media screen and (min-width:575.98px){
+            display:block;
+        }
+    }
+}

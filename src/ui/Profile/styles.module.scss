@@ -1,0 +1,19 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:0 10px;
+    img{
+        width:32px;
+        height:32px;
+        background-image:url('../../../public/images/profile.svg');
+    }
+    &__text{
+        color:$color-172B4D;
+        @media (max-width:575.98px){
+            display:none;
+        }
+    }
+}

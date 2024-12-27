@@ -1,0 +1,26 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.date{
+    display:flex;
+    align-items:center;
+    @include border-radius(3px);
+    border:1px solid $color-EBECF0;
+    justify-content:space-around;
+    height:32px;
+    input{
+        border:none;
+        height:100%;
+        border-left:1px solid $color-EBECF0;
+        border-right:1px solid $color-EBECF0;
+        @extend .pl-5, .pr-5;
+    }
+}
+.arrow{
+    &__left{
+        background-image:url('../../../public/images/left.svg');
+    }
+    &__right{
+        background-image:url('../../../public/images/right.svg');
+    }
+}

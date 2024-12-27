@@ -1,0 +1,38 @@
+@use "color" as *;
+@import "mixins";
+
+*{
+    box-sizing:border-box;
+    outline:medium none;
+    text-decoration:none;
+    @extend .m-0, .p-0, .font14;
+    list-style:none;
+    font-family: "Rubik", serif;
+}
+img{
+    max-width:100%;
+    border:0;
+    vertical-align:middle;
+}
+.icon{
+    width:24px;
+    height:24px;
+    display:inline-block;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+.page{
+    &__inner{
+        // display:flex;
+    }
+    &__right{
+        display:flex;
+        flex:1 1 auto;
+        align-items:flex-start;
+        flex-direction:column;
+        @media screen and (min-width:992px){
+            padding-left:70px;
+        }
+    }
+}

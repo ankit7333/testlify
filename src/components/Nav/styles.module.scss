@@ -1,0 +1,67 @@
+@use '../../styles/color' as *;
+@import '../../styles/mixins';
+
+.nav{
+    display:none;
+    align-items:center;
+    gap:0 20px;
+    @media screen and (min-width:992px){
+        display:flex;
+    }
+    &__active{
+        display:flex;
+        flex-direction:column;
+        @include position(absolute, $top:65px, $left:0, $right:0, $bottom:0);
+        align-items:stretch;
+        @extend .pl-10, .pr-10;
+        z-index:1;
+        height:100%;
+        background-color:$color-ffffff;
+        @media screen and (min-width:575.98px){
+            top:75px;
+        }
+        @media screen and (min-width:992px){
+            position:static;
+            flex-direction:row;
+            padding:0;
+        }
+        ul{
+            display:flex;
+            flex-direction:column;
+            width:100%;
+            background-color:$color-ffffff;
+            @extend .mb-10;
+            @media screen and (min-width:992px){
+                flex-direction:row;
+                margin:0;
+            }
+            li{
+                border-bottom:1px solid $color-EBECF0;
+                width:100%;
+                @extend .p-10;
+                @media screen and (min-width:992px){
+                    border:0;
+                    width:auto;
+                    padding:0;
+                }
+            }
+        }
+    }
+    ul{
+        display:flex;
+        align-items:center;
+        gap:0 20px;
+        a{
+            color:$color-344563;
+            opacity:.8;
+            @include transition(all .5s linear);
+            @extend .font14;
+            @media screen and (min-width:992px){
+                font-size:16px;
+            }
+            &:hover{
+                opacity:1;
+            }
+        }
+    }
+}
