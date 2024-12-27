@@ -8,7 +8,7 @@ export default function Issue(){
         const count = 0+index + 1
         result.push(generateArrayWithTotal(dayArr, count))
     })
-    const finalLogged = dayArr.map((_, i) =>
+    const finalLogged = dayArr.map((_, i) => 
         result.reduce((sum, obj) => sum + obj.logged[i], 0)
     );
     const obj = {
@@ -20,6 +20,12 @@ export default function Issue(){
         total: result.reduce((acc,cur)=>acc+cur.total,0),
     }
     result.push(obj)
+    // console.log(dayArr, result)
+
+    const checkisweekend = (index)=>{
+        return !!['Sat', 'Sun'].includes(dayArr?.[index]?.dayName || '');
+    }
+
     return(
         <div className={styles.issue}>
             <table>
@@ -48,35 +54,16 @@ export default function Issue(){
                                 </td>
                                 <td className={`${styles.sticky} ${styles.sticky__second}`}>{item.total}</td>
                                 {
-                                    item.logged.map(current => {
+                                    item.logged.map((current, index) => {
+                                        const isweenkend = checkisweekend(index)
                                         return(
-                                            <td>{current ? current : ''}</td>
+                                            <td className={isweenkend ? styles.nowork: ''}>{isweenkend ? '' : (current || '')}</td>
                                         )
                                     })
                                 }
                             </tr>
                         )
                     })}
-                    {/* <tr>
-                        <td className={`${styles.sticky} ${styles.sticky__first}`}>
-                            <span className={`icon ${styles.issue__icon}`} />
-                            <span className={styles.issue__title}>ATL-0011</span>
-                            <span className={styles.issue__summery}>Issue summary</span>
-                        </td>
-                        <td className={`${styles.sticky} ${styles.sticky__second}`}>4.5</td>
-                        <td>4.5</td><td>4.5</td><td>4.5</td><td></td><td></td>
-                        <td></td><td>4.5</td><td>4.5</td><td>4.5</td><td></td><td></td>
-                        <td></td><td>4.5</td><td>4.5</td><td>4.5</td><td className={styles.highlight}>4.5</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr className={styles.issue__totals}>
-                        <td className={`${styles.sticky} ${styles.sticky__first}`}>Total</td>
-                        <td className={`${styles.sticky} ${styles.sticky__second}`}>73.75</td>
-                        <td>4.5</td><td>4.5</td><td>4.5</td><td></td><td></td>
-                        <td></td><td>4.5</td><td>4.5</td><td>4.5</td><td></td><td></td>
-                        <td></td><td>4.5</td><td>4.5</td><td>4.5</td><td>4.5</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr> */}
                 </tbody>
             </table>
         </div>

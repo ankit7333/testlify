@@ -100,3 +100,6 @@
     @include border-radius(50px);
     @extend .pl-5, .pr-5;
 }
+.nowork{
+    background-color:$color-F4F5F7;
+}
