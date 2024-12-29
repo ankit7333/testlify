@@ -9,7 +9,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="/Yourwork" />} />
           <Route path="/Yourwork" element={<Yourwork />} />
-          <Route path="/Project" element={<p>Project</p>} />
+          <Route path="/Projects" element={<p>Projects</p>} />
           <Route path="/Filters" element={<p>Filters</p>} />
           <Route path="/Dashboard" element={<p>Dashboard</p>} />
           <Route path="/People" element={<p>People</p>} />
