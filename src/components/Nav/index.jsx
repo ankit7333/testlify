@@ -6,7 +6,7 @@ export default function Nav({isNav}){
     return(
         <nav className={`${styles.nav} ${isNav ? styles.nav__active : ''}`}>
             <ul>
-                {menu.map((value, index) => <li key={index}><NavLink to={value.replace(/ /g,'')} title={`Navigate to ${value}`} >{value}</NavLink></li>)}
+                {menu.map((value, index) => <li key={index}><NavLink to={`/${value.replace(/ /g, '')}`} title={`Navigate to ${value}`} >{value}</NavLink></li>)}
             </ul>
             <Button type="primary">Create</Button>
         </nav>
