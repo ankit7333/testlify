@@ -10,10 +10,10 @@ function App() {
           <Route index element={<Navigate replace to="Yourwork" />} />
           <Route path="Yourwork" element={<Yourwork />} />
           <Route path="Project" element={<p>Project</p>} />
-          <Route path="Project" element={<p>Filters</p>} />
-          <Route path="Project" element={<p>Dashboard</p>} />
-          <Route path="Project" element={<p>People</p>} />
-          <Route path="Project" element={<p>Apps</p>} />
+          <Route path="Filters" element={<p>Filters</p>} />
+          <Route path="Dashboard" element={<p>Dashboard</p>} />
+          <Route path="People" element={<p>People</p>} />
+          <Route path="Apps" element={<p>Apps</p>} />
         </Route>
         <Route path="*" element={<p>Page not found</p>} />
       </Routes>
